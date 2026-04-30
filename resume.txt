@@ -1,0 +1,14 @@
+Frontend Developer - Resume
+==========================
+
+Name: John Doe
+Role: Frontend Developer
+Email: john@example.com
+
+Skills:
+- HTML5 & CSS3
+- JavaScript (ES6+)
+- React.js
+- Responsive Design
+
+(Replace this text file with your actual PDF resume!)
