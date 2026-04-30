@@ -1,13 +1,88 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>build-a-calculater</title>
+    <title>Lumina Gallery | Premium Image Experience</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./style.css">
   </head>
   <body>
-    <div id="root"></div>
-    <script type="module" src="/src/main.tsx"></script>
+    <header class="header">
+      <div class="logo">LUMINA<span>GALLERY</span></div>
+      <div class="controls">
+        <div class="view-toggle">
+          <button id="grid-view" class="active" title="Grid View">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7"></rect><rect x="14" y="3" width="7" height="7"></rect><rect x="14" y="14" width="7" height="7"></rect><rect x="3" y="14" width="7" height="7"></rect></svg>
+          </button>
+          <button id="masonry-view" title="Masonry View">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3h7v11H3zM14 3h7v5h-7zM14 12h7v9h-7zM3 18h7v3H3z"></path></svg>
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <main class="container">
+      <section class="filters-section">
+        <div class="filter-group">
+          <span class="filter-label">Categories</span>
+          <div class="filter-options" id="category-filters">
+            <button class="filter-btn active" data-category="all">All</button>
+            <button class="filter-btn" data-category="nature">Nature</button>
+            <button class="filter-btn" data-category="mountains">Mountains</button>
+            <button class="filter-btn" data-category="ocean">Ocean</button>
+            <button class="filter-btn" data-category="urban">Urban</button>
+            <button class="filter-btn" data-category="sky">Sky</button>
+            <button class="filter-btn" data-category="wildlife">Wildlife</button>
+          </div>
+        </div>
+
+        <div class="filter-group">
+          <span class="filter-label">Image Effects</span>
+          <div class="filter-options" id="effect-filters">
+            <button class="effect-btn active" data-effect="none">Normal</button>
+            <button class="effect-btn" data-effect="vintage">Vintage</button>
+            <button class="effect-btn" data-effect="bw">B&W</button>
+            <button class="effect-btn" data-effect="vivid">Vivid</button>
+            <button class="effect-btn" data-effect="cool">Cool</button>
+            <button class="effect-btn" data-effect="warm">Warm</button>
+          </div>
+        </div>
+      </section>
+
+      <div id="gallery" class="gallery grid-layout">
+        <!-- Images will be injected here -->
+      </div>
+    </main>
+
+    <!-- Lightbox -->
+    <div id="lightbox" class="lightbox">
+      <button class="close-btn">&times;</button>
+      <button class="nav-btn prev-btn">&lsaquo;</button>
+      <button class="nav-btn next-btn">&rsaquo;</button>
+      
+      <div class="lightbox-content">
+        <div class="image-container">
+          <img src="" alt="" id="lightbox-img">
+          <div class="image-info">
+            <h2 id="lightbox-title"></h2>
+            <p id="lightbox-desc"></p>
+            <div class="image-meta">
+              <span id="lightbox-category"></span>
+              <span id="lightbox-counter"></span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="thumbnail-strip" id="thumbnail-strip">
+        <!-- Thumbnails will be injected here -->
+      </div>
+    </div>
+
+    <script type="module" src="/main.js"></script>
   </body>
 </html>
